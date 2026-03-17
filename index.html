@@ -167,6 +167,21 @@
         .del-wrap { text-align:center; padding:6px 0 2px; }
         .del-btn { color:var(--red); font-weight:700; font-size:13px; background:none; border:none; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
         .snap-pill { background:var(--accent); color:white; font-size:9px; font-weight:800; padding:3px 10px; border-radius:20px; font-family:var(--mono); letter-spacing:.5px; }
+
+        /* Password Modal */
+        .pw-overlay { position:fixed; inset:0; z-index:60; display:none; background:rgba(6,28,26,.7); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:20px; }
+        .pw-overlay.show { display:flex; }
+        .pw-box { background:white; border-radius:24px; padding:28px 24px 20px; width:100%; max-width:340px; box-shadow:0 20px 60px rgba(0,0,0,.25); }
+        .pw-icon { font-size:36px; text-align:center; margin-bottom:10px; }
+        .pw-title { font-size:18px; font-weight:800; text-align:center; margin-bottom:4px; color:var(--text); }
+        .pw-sub { font-size:12px; color:var(--muted); text-align:center; margin-bottom:20px; }
+        .pw-input { width:100%; padding:14px 16px; border:1.5px solid var(--border); border-radius:14px; font-size:16px; font-family:'Plus Jakarta Sans',sans-serif; outline:none; color:var(--text); background:var(--accent-light); letter-spacing:2px; }
+        .pw-input:focus { border-color:var(--accent); }
+        .pw-err { color:var(--red); font-size:12px; font-weight:700; text-align:center; margin-top:8px; min-height:18px; }
+        .pw-btns { display:flex; gap:8px; margin-top:14px; }
+        .pw-confirm { flex:2; background:var(--accent); color:white; border:none; border-radius:12px; padding:13px; font-weight:800; font-size:14px; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
+        .pw-confirm:active { background:var(--accent-dark); }
+        .pw-cancel { flex:1; background:#f0f5f4; color:var(--muted); border:none; border-radius:12px; padding:13px; font-weight:700; font-size:14px; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
     </style>
 </head>
 <body>
@@ -232,30 +247,4 @@
             </div>
             <div class="atabs">
                 <button class="atab on" onclick="swTab('tInfo',this)">Info</button>
-                <button class="atab"    onclick="swTab('tFin',this)">Finance</button>
-                <button class="atab"    onclick="swTab('tDocs',this)">Docs</button>
-            </div>
-            <div id="tInfo" class="apane on">
-                <span class="slbl">Personal Info</span>
-                <input class="inp" id="nName"   placeholder="Full Name">
-                <input class="inp" id="nMobile" placeholder="Mobile Number">
-                <input class="inp" id="nNat"    placeholder="Nationality">
-                <input class="inp" id="nIqama"  placeholder="Iqama Number">
-                <input class="inp" id="nWork"   placeholder="Work Type (Driver, etc.)">
-                <select class="inp" id="nStatus">
-                    <option value="active">Active</option>
-                    <option value="leave">On Leave</option>
-                    <option value="terminated">Terminated</option>
-                </select>
-                <input class="inp" id="nBlood"  placeholder="Blood Type">
-                <input class="inp" id="nAcc"    placeholder="Accommodation">
-                <input class="inp" id="nLic"    placeholder="License Number">
-                <input class="inp" id="nVeh"    placeholder="Vehicle Info">
-                <div class="igrid">
-                    <input class="inp" id="nJoin"  placeholder="Joining Date">
-                    <input class="inp" id="nLeave" placeholder="Leaving Date">
-                </div>
-                <span class="slbl">Notes</span>
-                <textarea class="inp" id="nNotes" placeholder="Visa expiry, company phone, etc." rows="3" style="resize:vertical"></textarea>
-            </div>
-            <di
+                
